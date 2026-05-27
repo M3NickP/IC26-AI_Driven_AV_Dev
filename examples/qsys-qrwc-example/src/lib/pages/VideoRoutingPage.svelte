@@ -18,16 +18,16 @@
     { input: 6, label: 'Apple TV' },
   ];
 
-  const videoRouter = qrwcSvelte.useComponent('VideoRoter');
+  const videoRouter = qrwcSvelte.useComponent('VideoRouter');
 
   const display1Routes: RoutedSource[] = sourceOptions.map((source) => ({
     ...source,
-    control: videoRouter.useButton(`hdmi.out.1.select ${source.input}`),
+    control: videoRouter.useButton(`Display 1 ${source.input}`),
   }));
 
   const display2Routes: RoutedSource[] = sourceOptions.map((source) => ({
     ...source,
-    control: videoRouter.useButton(`hdmi.out.2.select ${source.input}`),
+    control: videoRouter.useButton(`Display 2 ${source.input}`),
   }));
 
   function routeDisplay(routes: RoutedSource[], input: number): void {
