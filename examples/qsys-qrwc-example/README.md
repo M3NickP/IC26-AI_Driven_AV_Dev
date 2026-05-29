@@ -1,47 +1,30 @@
-# Svelte + TS + Vite
+# Q-SYS QRWC + Svelte + Vite Example
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+This is a basic project that implements qrwc-svelte in a Svelte 5 project for the InfoComm Course `AI Driven AV Development workflows`.
 
-## Recommended IDE Setup
+## Recommended IDE Setup - Cursor
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- [Cursor](https://www.cursor.com/) is a modern, AI-powered IDE that integrates with qrwc-svelte and provides a seamless development experience.
+- [Svelte MCP](https://svelte.dev/docs/ai/skills) 
 
-## Need an official Svelte framework?
+> Note: Cursor will likely start in the Agents view, Switch to the editor view to see the VSCode style layout.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Prerequisites
 
-## Technical considerations
+- [Node.js 22.x LTS or higher](https://nodejs.org/en)
+- A Hardware Q-SYS Core (V10.0 or later) [with QRWC enabled](https://q-syshelp.qsc.com/Content/Networking/Interfaces_Services.htm#QRWC_Network)
 
-**Why use this over SvelteKit?**
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Setup Instructions
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+1. Load the example Q-SYS design file into your Q-SYS Core.
+2. Ensure that the terminal is in the project directory (or open the qsys-qrwc-example folder in Cursor)
+2. Run `npm install` to install the dependencies
+3. Edit the `src/lib/qrwc.ts` file to point to your Q-SYS Core IP address.
+4. Edit the `.cursor/mcp.json` file to point to your Q-SYS Core IP address.
+5. Enable the qrwc-svelte MCP in Cursor by pressing f1, the typing `mcp` and selecting `qrwc-svelte`.
+6. Run `npm run dev` to start the development server
+7. Open the browser to `http://localhost:5173`
+8. Start prompting Cursor to generate code for you!
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Example prompts along with the Q-SYS design file are available in the examples folder (up one directory from this one)
