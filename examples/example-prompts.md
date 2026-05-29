@@ -2,7 +2,7 @@
 
 Here are some example prompts for the q-sys-qwrc-example project.
 
-In all of the examples we used Cursor's Composer 2.5 model.
+In all of the examples, we used Cursor's Composer 2.5 model.
 
 It is recommended to issue each prompt in PLAN mode first, then issue the prompt in Agent mode to execute the plan.
 
